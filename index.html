@@ -1,167 +1,574 @@
+html
+
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Abinaya R — Computer Science Engineering Student & Aspiring Full Stack Developer. Portfolio showcasing projects, skills, and achievements." />
+  <meta name="keywords" content="Abinaya R, Computer Science, Full Stack Developer, Portfolio, Web Development, Java, Python" />
+  <meta name="author" content="Abinaya R" />
+  <meta property="og:title" content="Abinaya R | Portfolio" />
+  <meta property="og:description" content="Aspiring Full Stack Developer · CSE Student · Salem" />
+  <meta property="og:type" content="website" />
+  <title>Abinaya R | Portfolio</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-<title>Abinaya R | Portfolio</title>
-
-<link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="style.css" />
 </head>
-
-<body>
-
-<nav>
-
-<div class="logo">ABINAYA R</div>
-
-<div>
-
-<a href="#about">About</a>
-
-<a href="#skills">Skills</a>
-
-<a href="#projects">Projects</a>
-
-<a href="#achievements">Achievements</a>
-
-<a href="#contact">Contact</a>
-
-</div>
-
-</nav>
- 
-<header>
-
-<h1>Abinaya R</h1>
-
-<h2>Computer Science Engineering Student</h2>
-
-<p>
-Aspiring Full Stack Developer • Continuous Learner • Building Real Projects
-</p>
-
-<a href="#projects">
-<button>
-View Projects
-</button>
-</a>
-
-</header>
-
-<section id="about">
-
-<h2>About Me</h2>
-
-<p>
-
-I am a second-year Computer Science Engineering student studying in Dhirajlal Gandhi College of Technology, Salem.
-
-I am interested in Full Stack Development and continuously improving my technical and problem-solving skills.
-
-I enjoy learning, collaborating, participating in events, and creating projects.
-
-Currently learning Data Structures.
-
-</p>
-
-</section>
-
-<section id="skills">
-
-<h2>Technical Skills</h2>
-
-<div class="grid">
-
-<div class="card">Java</div>
-
-<div class="card">Python</div>
-
-<div class="card">C</div>
-
-<div class="card">HTML</div>
-
-<div class="card">CSS</div>
-
-<div class="card">JavaScript</div>
-
-<div class="card">MySQL</div>
-
-<div class="card">Data Structures</div>
-
-</div>
-
-</section>
-
-<section id="projects">
-
-<h2>Projects</h2>
-
-<div class="project">
-
-<h3>Mini Projects</h3>
-
-<p>
-Developed 10+ mini projects during learning and practice.
-</p>
-
-</div>
-
-<div class="project">
-
-<h3>Portfolio Website</h3>
-
-<p>
-Designed and developed a responsive personal portfolio.
-</p>
-
-</div>
-
-</section>
-
-<section id="achievements">
-
-<h2>Achievements</h2>
-
-<ul>
-
-<li>Participated in Inter College PPT Presentation</li>
-
-<li>Participated in Women Hackathon</li>
-
-<li>Leadership Qualities</li>
-
-<li>Good Communication Skills</li>
-
-<li>Good Listener</li>
-
-</ul>
-
-</section>
-
-<section id="contact">
-
-<h2>Contact</h2>
-
-<p>Email: rabinayaramajayam550@gmail.com</p>
-
-<p>GitHub: https://gitup.com/Abinaya411-egu</p>
-
-<p>LinkedIn: https://www.linkedin.com/in/abinayar08?utm_source=share_via&utm_content=profile&utm_medium=member_androidlinkedin.com/in/yourname</p>
-
-</section>
-
-<footer>
-
-<p>
-rabinayaramajayam550@gmail.com 2026 Abinaya R | Full Stack Developer Portfolio
-</p>
-
-</footer>
-
+<body data-theme="light">
+
+  <!-- ═══════════════════════ LOADER ═══════════════════════ -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <svg class="loader-ring" viewBox="0 0 60 60">
+        <circle cx="30" cy="30" r="26" />
+      </svg>
+      <span class="loader-initials">AR</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════ CURSOR ═══════════════════════ -->
+  <div id="cursor" aria-hidden="true"></div>
+  <div id="cursor-follower" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════ NAVBAR ═══════════════════════ -->
+  <header id="navbar" role="banner">
+    <nav class="nav-container" role="navigation" aria-label="Main navigation">
+      <a href="#hero" class="nav-logo" aria-label="Home">AR</a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#about"        class="nav-link">About</a></li>
+        <li><a href="#skills"       class="nav-link">Skills</a></li>
+        <li><a href="#projects"     class="nav-link">Projects</a></li>
+        <li><a href="#achievements" class="nav-link">Achievements</a></li>
+        <li><a href="#contact"      class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+          <span class="theme-icon-light">☀</span>
+          <span class="theme-icon-dark">◑</span>
+        </button>
+        <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+      <ul role="list">
+        <li><a href="#about"        class="mobile-link">About</a></li>
+        <li><a href="#skills"       class="mobile-link">Skills</a></li>
+        <li><a href="#projects"     class="mobile-link">Projects</a></li>
+        <li><a href="#achievements" class="mobile-link">Achievements</a></li>
+        <li><a href="#contact"      class="mobile-link">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════ HERO ═══════════════════════ -->
+    <section id="hero" aria-label="Introduction">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow reveal-up">Computer Science Engineering</p>
+
+        <h1 class="hero-name reveal-up delay-1">
+          <span class="name-line">Abinaya</span>
+          <span class="name-line accent-stroke">R.</span>
+        </h1>
+
+        <p class="hero-title reveal-up delay-2">
+          Aspiring <span id="typing-target" aria-live="polite"></span><span class="cursor-blink">|</span>
+        </p>
+
+        <p class="hero-desc reveal-up delay-3">
+          Motivated Computer Science Engineering student passionate about building<br class="desk-only" />
+          user-focused applications and solving real-world problems through technology.
+        </p>
+
+        <div class="hero-cta reveal-up delay-4">
+          <a href="#projects" class="btn btn-primary">
+            <span>View Projects</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="Abinaya_R_Resume.pdf" download class="btn btn-outline">
+            <span>Download Resume</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3m0 12-4-4m4 4 4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-ghost">Contact Me</a>
+        </div>
+
+        <div class="hero-scroll reveal-up delay-5" aria-hidden="true">
+          <span>Scroll</span>
+          <div class="scroll-line"></div>
+        </div>
+      </div>
+
+      <!-- floating tag chips -->
+      <div class="hero-tags" aria-hidden="true">
+        <span class="tag-chip">Java</span>
+        <span class="tag-chip">Python</span>
+        <span class="tag-chip">JavaScript</span>
+        <span class="tag-chip">Full Stack</span>
+        <span class="tag-chip">MySQL</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ ABOUT ═══════════════════════ -->
+    <section id="about" class="section" aria-label="About me">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-label">01 — About</span>
+          <h2 class="section-title">Who I Am</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-visual reveal-left">
+            <div class="about-card-wrap">
+              <div class="about-monogram glass-card">
+                <span>AR</span>
+              </div>
+              <div class="about-stat-cards">
+                <div class="stat-card glass-card reveal-up delay-2">
+                  <span class="stat-num">3+</span>
+                  <span class="stat-label">Live Projects</span>
+                </div>
+                <div class="stat-card glass-card reveal-up delay-3">
+                  <span class="stat-num">5+</span>
+                  <span class="stat-label">Technologies</span>
+                </div>
+                <div class="stat-card glass-card reveal-up delay-4">
+                  <span class="stat-num">2+</span>
+                  <span class="stat-label">Events Won</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-content reveal-right">
+            <h3 class="about-heading">Building the future, one line at a time.</h3>
+            <p class="about-para">
+              I'm <strong>Abinaya R</strong>, a Computer Science Engineering student at
+              <strong>Dhirajlal Gandhi College of Technology, Salem</strong>, pursuing my
+              B.E. with a focus on software development and web technologies.
+            </p>
+            <p class="about-para">
+              My journey in tech began with curiosity and grew into a genuine passion for
+              crafting applications that are both functional and beautiful. From responsive
+              portfolio sites to interactive task managers, I love seeing ideas come to life
+              through code.
+            </p>
+            <p class="about-para">
+              Currently deepening my knowledge in <strong>Data Structures & Algorithms</strong>
+              to strengthen my problem-solving fundamentals and prepare for industry-level
+              engineering challenges.
+            </p>
+
+            <div class="about-highlights">
+              <div class="highlight-item">
+                <div class="highlight-dot"></div>
+                <span>B.E. Computer Science Engineering</span>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-dot"></div>
+                <span>Dhirajlal Gandhi College of Technology, Salem</span>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-dot"></div>
+                <span>Currently mastering DSA</span>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-dot"></div>
+                <span>Aspiring Full Stack Developer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ SKILLS ═══════════════════════ -->
+    <section id="skills" class="section section-alt" aria-label="Technical skills">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-label">02 — Skills</span>
+          <h2 class="section-title">Technical Arsenal</h2>
+        </div>
+
+        <div class="skills-grid">
+
+          <!-- Languages -->
+          <div class="skill-category glass-card reveal-up delay-1">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon">{ }</div>
+              <h3>Languages</h3>
+            </div>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-info"><span>Java</span><span class="skill-pct">80%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info"><span>Python</span><span class="skill-pct">75%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info"><span>C</span><span class="skill-pct">70%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Frontend -->
+          <div class="skill-category glass-card reveal-up delay-2">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon">&lt;/&gt;</div>
+              <h3>Frontend</h3>
+            </div>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-info"><span>HTML5</span><span class="skill-pct">90%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info"><span>CSS3</span><span class="skill-pct">85%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info"><span>JavaScript</span><span class="skill-pct">78%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Database -->
+          <div class="skill-category glass-card reveal-up delay-3">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon">⊕</div>
+              <h3>Database</h3>
+            </div>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-info"><span>MySQL</span><span class="skill-pct">72%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-width="72"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <div class="skill-category glass-card reveal-up delay-4">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon">⚙</div>
+              <h3>Tools &amp; Platforms</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="tool-tag">Git</span>
+              <span class="tool-tag">GitHub</span>
+              <span class="tool-tag">VS Code</span>
+              <span class="tool-tag">GitHub Pages</span>
+            </div>
+          </div>
+
+          <!-- Currently Learning -->
+          <div class="skill-category glass-card skill-learning reveal-up delay-5">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon">↑</div>
+              <h3>Currently Learning</h3>
+            </div>
+            <div class="learning-badge">
+              <span class="pulse-dot" aria-hidden="true"></span>
+              Data Structures &amp; Algorithms
+            </div>
+            <p class="learning-note">Strengthening problem-solving foundations for technical interviews and real-world engineering.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ PROJECTS ═══════════════════════ -->
+    <section id="projects" class="section" aria-label="Projects">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-label">03 — Projects</span>
+          <h2 class="section-title">Built With Purpose</h2>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- Project 1 -->
+          <article class="project-card glass-card reveal-up delay-1" aria-label="Portfolio Website project">
+            <div class="project-number" aria-hidden="true">01</div>
+            <div class="project-body">
+              <div class="project-tags-row">
+                <span class="proj-tag">HTML</span>
+                <span class="proj-tag">CSS</span>
+                <span class="proj-tag">JavaScript</span>
+              </div>
+              <h3 class="project-title">Portfolio Website</h3>
+              <p class="project-desc">
+                A fully responsive personal portfolio website crafted to showcase skills,
+                projects, and technical identity. Built with mobile-first design principles,
+                smooth animations, and deployed via GitHub Pages.
+              </p>
+              <ul class="project-features">
+                <li>Mobile-first responsive layout</li>
+                <li>Custom animations & transitions</li>
+                <li>Deployed & live on GitHub Pages</li>
+              </ul>
+            </div>
+            <div class="project-links">
+              <a href="https://abinaya411-egu.github.io/abinaya_first_portfolio/" target="_blank" rel="noopener noreferrer" class="proj-btn proj-btn-primary">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Live Demo
+              </a>
+              <a href="https://github.com/abinaya411-egu" target="_blank" rel="noopener noreferrer" class="proj-btn proj-btn-outline">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                GitHub
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card glass-card reveal-up delay-2" aria-label="Landing Page project">
+            <div class="project-number" aria-hidden="true">02</div>
+            <div class="project-body">
+              <div class="project-tags-row">
+                <span class="proj-tag">HTML</span>
+                <span class="proj-tag">CSS3</span>
+                <span class="proj-tag">UI/UX</span>
+              </div>
+              <h3 class="project-title">3D LinkedIn Landing Page</h3>
+              <p class="project-desc">
+                A modern, visually immersive landing page featuring 3D-inspired design
+                elements and polished UI composition. Demonstrates advanced CSS techniques
+                and a strong eye for clean visual hierarchy.
+              </p>
+              <ul class="project-features">
+                <li>3D visual design aesthetics</li>
+                <li>Clean UI/UX composition</li>
+                <li>Cross-browser optimized</li>
+              </ul>
+            </div>
+            <div class="project-links">
+              <a href="https://abinaya411-egu.github.io/3D-LINKEDIN/" target="_blank" rel="noopener noreferrer" class="proj-btn proj-btn-primary">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Live Demo
+              </a>
+              <a href="https://github.com/abinaya411-egu" target="_blank" rel="noopener noreferrer" class="proj-btn proj-btn-outline">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                GitHub
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card glass-card reveal-up delay-3 project-featured" aria-label="Smart Daily Task Manager project">
+            <div class="project-number" aria-hidden="true">03</div>
+            <div class="project-body">
+              <div class="project-tags-row">
+                <span class="proj-tag">JavaScript</span>
+                <span class="proj-tag">HTML</span>
+                <span class="proj-tag">CSS</span>
+                <span class="proj-tag featured-tag">Featured</span>
+              </div>
+              <h3 class="project-title">Smart Daily Task Manager</h3>
+              <p class="project-desc">
+                A feature-rich productivity web application enabling users to create,
+                prioritize, complete, and delete daily tasks in real time. Built with
+                vanilla JavaScript using DOM manipulation and event-driven architecture.
+              </p>
+              <ul class="project-features">
+                <li>Real-time task add / complete / delete</li>
+                <li>Interactive UI with smooth transitions</li>
+                <li>Event-driven JavaScript architecture</li>
+              </ul>
+            </div>
+            <div class="project-links">
+              <a href="https://abinaya411-egu.github.io/daily-task-manager/" target="_blank" rel="noopener noreferrer" class="proj-btn proj-btn-primary">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Live Demo
+              </a>
+              <a href="https://github.com/abinaya411-egu" target="_blank" rel="noopener noreferrer" class="proj-btn proj-btn-outline">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                GitHub
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ ACHIEVEMENTS ═══════════════════════ -->
+    <section id="achievements" class="section section-alt" aria-label="Achievements">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-label">04 — Achievements</span>
+          <h2 class="section-title">Milestones</h2>
+        </div>
+
+        <div class="timeline" role="list">
+
+          <div class="timeline-item reveal-left" role="listitem">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-connector" aria-hidden="true"></div>
+            <div class="timeline-card glass-card">
+              <div class="timeline-icon" aria-hidden="true">⬡</div>
+              <div class="timeline-body">
+                <h3>Inter-College PPT Presentation</h3>
+                <p>Represented my department in an inter-collegiate technical presentation competition, demonstrating strong research, communication, and technical articulation skills to a panel of faculty and industry experts.</p>
+                <span class="timeline-badge">Academic Excellence</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item timeline-right reveal-right" role="listitem">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-connector" aria-hidden="true"></div>
+            <div class="timeline-card glass-card">
+              <div class="timeline-icon" aria-hidden="true">♀</div>
+              <div class="timeline-body">
+                <h3>Women in Technology Hackathon</h3>
+                <p>Participated in a Women-in-Tech hackathon, collaborating in a team environment to conceptualise and build a working prototype under time pressure — honing rapid problem-solving and teamwork skills.</p>
+                <span class="timeline-badge">Hackathon</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-left" role="listitem">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-connector" aria-hidden="true"></div>
+            <div class="timeline-card glass-card">
+              <div class="timeline-icon" aria-hidden="true">◈</div>
+              <div class="timeline-body">
+                <h3>Technical Webinar Participation</h3>
+                <p>Completed multiple industry-focused technical webinars covering software development best practices, emerging technologies, and programming fundamentals — staying current with the fast-moving tech landscape.</p>
+                <span class="timeline-badge">Learning & Growth</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item timeline-right reveal-right" role="listitem">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-card glass-card">
+              <div class="timeline-icon" aria-hidden="true">◉</div>
+              <div class="timeline-body">
+                <h3>Independent Project Building</h3>
+                <p>Self-initiated and independently built multiple full-stack web projects — from concept through deployment — demonstrating initiative, self-direction, and the ability to ship real products without supervision.</p>
+                <span class="timeline-badge">Self-Driven</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ CONTACT ═══════════════════════ -->
+    <section id="contact" class="section" aria-label="Contact">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-label">05 — Contact</span>
+          <h2 class="section-title">Let's Connect</h2>
+          <p class="section-subtitle">Open to internship opportunities, collaborations, and conversations about technology.</p>
+        </div>
+
+        <div class="contact-grid">
+
+          <div class="contact-info reveal-left">
+            <a href="mailto:rabinayaramajayam550@gmail.com" class="contact-card glass-card" aria-label="Send email">
+              <div class="contact-card-icon" aria-hidden="true">✉</div>
+              <div>
+                <p class="contact-card-label">Email</p>
+                <p class="contact-card-value">rabinayaramajayam550@gmail.com</p>
+              </div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/abinayar08" target="_blank" rel="noopener noreferrer" class="contact-card glass-card" aria-label="LinkedIn profile">
+              <div class="contact-card-icon" aria-hidden="true">in</div>
+              <div>
+                <p class="contact-card-label">LinkedIn</p>
+                <p class="contact-card-value">linkedin.com/in/abinayar08</p>
+              </div>
+            </a>
+
+            <a href="https://abinaya411-egu.github.io" target="_blank" rel="noopener noreferrer" class="contact-card glass-card" aria-label="GitHub profile">
+              <div class="contact-card-icon" aria-hidden="true">⌥</div>
+              <div>
+                <p class="contact-card-label">GitHub</p>
+                <p class="contact-card-value">abinaya411-egu.github.io</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form-wrap reveal-right">
+            <form id="contact-form" class="contact-form glass-card" novalidate aria-label="Contact form">
+              <div class="form-group">
+                <label for="cf-name">Your Name</label>
+                <input type="text" id="cf-name" name="name" autocomplete="name" required placeholder="e.g. Priya Sharma" />
+                <span class="form-error" aria-live="polite"></span>
+              </div>
+              <div class="form-group">
+                <label for="cf-email">Email Address</label>
+                <input type="email" id="cf-email" name="email" autocomplete="email" required placeholder="you@example.com" />
+                <span class="form-error" aria-live="polite"></span>
+              </div>
+              <div class="form-group">
+                <label for="cf-subject">Subject</label>
+                <input type="text" id="cf-subject" name="subject" required placeholder="Internship Opportunity / Collaboration" />
+                <span class="form-error" aria-live="polite"></span>
+              </div>
+              <div class="form-group">
+                <label for="cf-msg">Message</label>
+                <textarea id="cf-msg" name="message" rows="5" required placeholder="Tell me about the opportunity or project…"></textarea>
+                <span class="form-error" aria-live="polite"></span>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full">
+                <span class="btn-label">Send Message</span>
+                <span class="btn-sending" aria-hidden="true">Sending…</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+              <p class="form-success" role="alert" aria-live="polite"></p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+  <footer id="footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p class="footer-tagline">Building, Learning and Growing Every Day.</p>
+      <p class="footer-name">Abinaya R</p>
+      <div class="footer-links" role="list">
+        <a href="#about"        role="listitem">About</a>
+        <a href="#projects"     role="listitem">Projects</a>
+        <a href="#contact"      role="listitem">Contact</a>
+      </div>
+      <p class="footer-copy">© 2025 Abinaya R. Crafted with care.</p>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" aria-label="Back to top" title="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
+
